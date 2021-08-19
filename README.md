@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# ONTRUCK FRONT-END TEST
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Ontruck front end test, we are so glad that you reached here and we are so gratefull for the time you are going to dedicate to this test. We hope that you don't invest more than a couple of hours to make it work and that you enjoy doing it.
 
-## Available Scripts
+## Objective
 
-In the project directory, you can run:
+The objective of this test is that you show us your front end skills and more specifically your skills with the React framework, if the test meets our criteria we will have a technical interview where we can discuss the decissions taken in the test and get a bit deeper into your knowledge.
 
-### `yarn start`
+## So, what you need to do?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Given this [repository](https://github.com/ontruck/frontend-exercise) with a Create React App boilerplate we want you to implement a list of SW planets showing at least these properties: name, diameter, climate, population and terrain.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will need to fetch the list of planets from [this public API](https://swapi.dev/) like "https://swapi.dev/api/planets" it will return a list of paginated planets with the desired properties.
 
-### `yarn test`
+Here it's a design about how we want it to look. [DESIGN](https://www.figma.com/file/7XKPqc9Yd4ns8fAu5XRq40/FE-Technical-Test?node-id=0%3A1)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Main functionalities
 
-### `yarn build`
+- Make it responsive, it should look good in mobile and desktop.
+- Fetch the data from the public api. It's ok to use a library like Axios, SWR or similar, up to you.
+- Show the list of planets and their properties in each card.
+- You don't need to care about pagination, it's ok to work with the first page of planets that the api returns.
+- You need to implement a search box that should filter the list of planets by name from a string the user should type in an input field.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Final thoughts
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Let us know if you have any major questions with the objective or the functionalities, although we want you to take your own decisions if you are able to back them up later in the interview.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Thank you for your time!
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The Ontruck team.
