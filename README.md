@@ -22,6 +22,12 @@ Here it's a design about how we want it to look. [DESIGN](https://www.figma.com/
 - You don't need to care about pagination, it's ok to work with the first page of planets that the api returns.
 - You need to implement a search box that should filter the list of planets by name from a string the user should type in an input field.
 
+### How would you share it?
+
+We want you to fork this repo to your github account and push your code there, then you could share with us the link so we can check the code before the interview.
+
+Extra points if you could make it available on Github pages 😉.
+
 ## Final thoughts
 
 Let us know if you have any major questions with the objective or the functionalities, although we want you to take your own decisions if you are able to back them up later in the interview.
