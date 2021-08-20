@@ -22,7 +22,7 @@ Here it's a design about how we want it to look. [DESIGN](https://www.figma.com/
 - You don't need to care about pagination, it's ok to work with the first page of planets that the api returns.
 - You need to implement a search box that should filter the list of planets by name from a string the user should type in an input field.
 
-## Bonus functionalities (not required, just if you have the time)
+#### Bonus functionalities (not required, just if you have the time)
 
 - Tests
 - More product complexity:
