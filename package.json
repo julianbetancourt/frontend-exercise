@@ -2,13 +2,25 @@
   "name": "frontend-exercise",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.8",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-query": "^3.21.1",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.3.1",
+    "styled-reset": "^4.3.4",
+    "typescript": "^4.4.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -34,5 +46,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.13",
+    "msw": "^0.35.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
