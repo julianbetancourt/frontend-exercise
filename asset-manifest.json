@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/ontruck-planets/static/js/main.184b9c3a.chunk.js",
-    "main.js.map": "/ontruck-planets/static/js/main.184b9c3a.chunk.js.map",
-    "runtime-main.js": "/ontruck-planets/static/js/runtime-main.1756e36e.js",
-    "runtime-main.js.map": "/ontruck-planets/static/js/runtime-main.1756e36e.js.map",
-    "static/js/2.96710ef6.chunk.js": "/ontruck-planets/static/js/2.96710ef6.chunk.js",
-    "static/js/2.96710ef6.chunk.js.map": "/ontruck-planets/static/js/2.96710ef6.chunk.js.map",
-    "static/js/3.45bad2b5.chunk.js": "/ontruck-planets/static/js/3.45bad2b5.chunk.js",
-    "static/js/3.45bad2b5.chunk.js.map": "/ontruck-planets/static/js/3.45bad2b5.chunk.js.map",
-    "index.html": "/ontruck-planets/index.html",
-    "static/js/2.96710ef6.chunk.js.LICENSE.txt": "/ontruck-planets/static/js/2.96710ef6.chunk.js.LICENSE.txt",
-    "static/media/logo.c483d810.svg": "/ontruck-planets/static/media/logo.c483d810.svg"
+    "main.js": "/frontend-exercise/static/js/main.184b9c3a.chunk.js",
+    "main.js.map": "/frontend-exercise/static/js/main.184b9c3a.chunk.js.map",
+    "runtime-main.js": "/frontend-exercise/static/js/runtime-main.55cebca5.js",
+    "runtime-main.js.map": "/frontend-exercise/static/js/runtime-main.55cebca5.js.map",
+    "static/js/2.e54afb92.chunk.js": "/frontend-exercise/static/js/2.e54afb92.chunk.js",
+    "static/js/2.e54afb92.chunk.js.map": "/frontend-exercise/static/js/2.e54afb92.chunk.js.map",
+    "static/js/3.45bad2b5.chunk.js": "/frontend-exercise/static/js/3.45bad2b5.chunk.js",
+    "static/js/3.45bad2b5.chunk.js.map": "/frontend-exercise/static/js/3.45bad2b5.chunk.js.map",
+    "index.html": "/frontend-exercise/index.html",
+    "static/js/2.e54afb92.chunk.js.LICENSE.txt": "/frontend-exercise/static/js/2.e54afb92.chunk.js.LICENSE.txt",
+    "static/media/logo.c483d810.svg": "/frontend-exercise/static/media/logo.c483d810.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1756e36e.js",
-    "static/js/2.96710ef6.chunk.js",
+    "static/js/runtime-main.55cebca5.js",
+    "static/js/2.e54afb92.chunk.js",
     "static/js/main.184b9c3a.chunk.js"
   ]
 }
