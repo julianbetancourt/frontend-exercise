@@ -6,17 +6,7 @@ import reset from "styled-reset"
 
 import App from "./components/App/App"
 import reportWebVitals from "./reportWebVitals"
-import { globalStyles } from "./utils/styles"
-
-declare module "styled-components" {
-  export interface DefaultTheme {
-    blueBottle: string
-  }
-}
-
-const theme = {
-  blueBottle: "#3b4f63",
-}
+import { globalStyles, screenBreaks } from "./utils/styles"
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -26,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 const queryClient = new QueryClient()
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={{ screenBreaks }}>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <App />

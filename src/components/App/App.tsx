@@ -41,7 +41,9 @@ function App() {
   const [searchValue, setSearchValue] = useState("")
   const [currentPage, setCurrentPage] = useState(1)
   const [sorter, setSorter] = useState<SortValues>(SortValues.none)
+
   const { data, error, isLoading } = usePlanets(currentPage)
+
   const filteredPlanets = useMemo(
     () =>
       getFilteredPlanets({

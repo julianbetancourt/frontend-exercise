@@ -13,12 +13,12 @@ export const Card = styled.div`
     margin-top: auto;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.md}) {
     width: 250px;
     margin: 0 10px 15px;
   }
 
-  @media (min-width: 1237px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.lg}) {
     margin: 0 8px 15px;
   }
 `
@@ -40,7 +40,7 @@ export const StatName = styled.div`
   width: 100px;
   font-weight: 700;
   word-wrap: break-word;
-  @media (min-width: 600px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.md}) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -49,7 +49,7 @@ export const StatName = styled.div`
 
 export const StatValue = styled.span`
   width: 50%;
-  @media (min-width: 600px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.md}) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -63,13 +63,13 @@ export const CardsContainer = styled.div`
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: 600px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.md}) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  @media (min-width: 1237px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.lg}) {
     width: 1100px;
     justify-content: end;
   }

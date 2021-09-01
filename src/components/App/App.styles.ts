@@ -4,7 +4,7 @@ export const Main = styled.main`
   width: 90%;
   margin: 0 auto;
 
-  @media (min-width: 1237px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.lg}) {
     width: 1100px;
   }
 `

@@ -21,9 +21,14 @@ export const globalStyles = css`
     font-family: Helvetica, sans-serif;
   }
   body {
-    background: ${(props) => props.theme.blueBottle};
+    background: #3b4f63;
   }
   button {
     ${buttonStyles}
   }
 `
+
+export const screenBreaks = {
+  md: "600px",
+  lg: "1237px",
+}

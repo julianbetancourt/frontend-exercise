@@ -12,6 +12,7 @@ import { rest } from "msw"
 import userEvent from "@testing-library/user-event"
 
 import App, { SortValues } from "./App"
+import { screenBreaks } from "../../utils/styles"
 
 import {
   getPlanetsWithDifferentPopulation,
@@ -19,27 +20,30 @@ import {
   planetMock,
 } from "../../mocks/planets"
 import { server } from "../../mocks/server"
+import { ThemeProvider } from "styled-components"
 
 const queryClient = new QueryClient()
 const Wrapper = ({ children }: { children: React.ReactNode }) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    <ThemeProvider theme={{ screenBreaks }}>{children}</ThemeProvider>
+  </QueryClientProvider>
 )
 
 describe("<App>", () => {
-  it("renders without crashing", () => {
-    render(
+  let app: any
+  beforeEach(() => {
+    app = (
       <Wrapper>
         <App />
       </Wrapper>
     )
   })
+  it("renders without crashing", () => {
+    render(app)
+  })
 
   it("renders loading if data is not present yet", async () => {
-    render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
 
     expect(screen.getByText(/Loading/i)).toBeInTheDocument()
 
@@ -57,11 +61,7 @@ describe("<App>", () => {
       })
     )
 
-    render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
 
     await waitFor(() => screen.getByText(/There was an error/i), {
       timeout: 4000,
@@ -71,21 +71,15 @@ describe("<App>", () => {
   })
 
   it("renders planets for first page", async () => {
-    render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
+
     await waitFor(() => screen.getByText(planetMock.name))
     expect(screen.getByText(planetMock.name)).toBeInTheDocument()
   })
 
   it("should not be able to click back if page is 1", async () => {
-    render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
+
     await waitFor(() => screen.getByText(planetMock.name))
 
     fireEvent.click(screen.getByText(/Back/i))
@@ -94,15 +88,13 @@ describe("<App>", () => {
   })
 
   it("should be able to go to the next page and see correct planets", async () => {
-    render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
+
     await waitFor(() => screen.getByText(planetMock.name))
 
     fireEvent.click(screen.getByText(/Next/i))
     await waitFor(() => screen.getByText("Planet in page 2"))
+
     expect(screen.getByText("Current page: 2")).toBeInTheDocument()
     expect(screen.getByText("Planet in page 2")).toBeInTheDocument()
   })
@@ -110,26 +102,26 @@ describe("<App>", () => {
   it("should be able to filter out when using the search bar", async () => {
     server.use(
       rest.get("https://swapi.dev/api/planets", (req, res, ctx) => {
-        console.log("INTERCEPTING SEARCH")
         return res.once(ctx.json(getTwoPlanetsResponse()))
       })
     )
 
-    const { debug } = render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    render(app)
 
+    // Both to be in the document at first
     await waitFor(() => screen.getByText(planetMock.name))
     await waitFor(() => screen.getByText("Second planet"))
+    expect(screen.queryByText(planetMock.name)).toBeInTheDocument()
+    expect(screen.getByText("Second planet")).toBeInTheDocument()
 
+    // filter
     fireEvent.change(screen.getByPlaceholderText(/Search/i), {
       target: {
         value: "Second planet",
       },
     })
 
+    // Only second planet to be in the DOM
     await waitFor(() => screen.getByText("Second planet"))
     expect(screen.queryByText(planetMock.name)).not.toBeInTheDocument()
     expect(screen.getByText("Second planet")).toBeInTheDocument()
@@ -138,16 +130,11 @@ describe("<App>", () => {
   it("should sort by a given criteria", async () => {
     server.use(
       rest.get("https://swapi.dev/api/planets", (req, res, ctx) => {
-        console.log("INTERCEPTING SEARCH")
         return res.once(ctx.json(getPlanetsWithDifferentPopulation()))
       })
     )
 
-    const { queryAllByTestId } = render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    const { queryAllByTestId } = render(app)
 
     await waitFor(() => screen.getByText(planetMock.name))
     await waitFor(() => screen.getByText("Second planet"))
@@ -163,6 +150,9 @@ describe("<App>", () => {
       SortValues.population
     )
 
+    await waitFor(() => screen.getByText(planetMock.name))
+    await waitFor(() => screen.getByText("Second planet"))
+
     // Sorted!
     const newPopulations = queryAllByTestId("population-value")
     expect(newPopulations[0]).toHaveTextContent("1")
@@ -170,11 +160,7 @@ describe("<App>", () => {
   })
 
   it("marks planet as reviewed", () => {
-    const { debug, getAllByText } = render(
-      <Wrapper>
-        <App />
-      </Wrapper>
-    )
+    const { getAllByText } = render(app)
 
     fireEvent.click(getAllByText(/Mark as reviewed/i)[0])
 

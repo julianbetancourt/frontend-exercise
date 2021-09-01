@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios"
+import axios from "axios"
 
 const PLANETS_BASE_URL = "https://swapi.dev"
 

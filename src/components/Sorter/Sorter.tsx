@@ -10,17 +10,16 @@ interface Props {
 export function Sorter({ sorter, setSorter }: Props) {
   return (
     <StyledSorter>
-      Select by
+      Sort by
       <select
         value={sorter}
         onChange={(e) => {
-          console.log("changed to", e.target.value)
           setSorter(e.target.value as SortValues)
         }}
         data-testid="sorter-select"
       >
         <option value={SortValues.none} data-testid={SortValues.none}>
-          none
+          None
         </option>
         <option value={SortValues.diameter} data-testid={SortValues.diameter}>
           Diameter

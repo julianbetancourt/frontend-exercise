@@ -62,6 +62,7 @@ export const getTwoPlanetsResponse = () => {
     {
       ...planetMock,
       name: "Second planet",
+      url: "swplanets.com/2",
     },
   ])
 }
@@ -73,6 +74,7 @@ export const getPlanetsWithDifferentPopulation = () => {
       ...planetMock,
       name: "Second planet",
       population: "1",
+      url: "swplanets.com/2",
     },
   ])
 }

@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   justify-content: center;
   padding: 0 20px;
-  @media (min-width: 1237px) {
+  @media (min-width: ${(p) => p.theme.screenBreaks.lg}) {
     justify-content: start;
   }
 `
@@ -17,13 +17,14 @@ export const HeaderContainer = styled.div`
   display: flex;
 
   & > svg {
-    width: 158px;
+    max-width: 180px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   & > span {
     text-transform: uppercase;
     align-self: flex-end;
+    font-size: 0.8rem;
   }
 `

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction, useEffect } from "react"
 import { useQueryClient } from "react-query"
 import { Planets } from "../../api/planets"
 import { PaginationButton, PaginationContainer } from "./Pagination.styles"
@@ -22,16 +22,27 @@ export function Pagination({
 }: Props) {
   const queryClient = useQueryClient()
 
+  useEffect(() => {
+    // Very likely the user will click on next
+    // so we can prefetch the data for the upcoming page
+    // and make it look faster ⚡
+    queryClient.prefetchQuery(
+      ["planets", currentPage + 1],
+      () => Planets.getAll({ page: currentPage + 1 }),
+      {
+        staleTime: 10000,
+      }
+    )
+  }, [currentPage, queryClient])
+
   return (
     <PaginationContainer>
       <span className="pagination__indicator">Current page: {currentPage}</span>
       <div>
         <PaginationButton
           onClick={(event) => {
-            console.log(hasPrevious)
             setSearchValue("")
             if (hasPrevious) {
-              console.log("clicked back and valid!")
               setCurrentPage((page) => page - 1)
             }
           }}
@@ -46,15 +57,6 @@ export function Pagination({
             if (hasNext) {
               setCurrentPage((page) => page + 1)
             }
-          }}
-          onMouseOver={(event) => {
-            queryClient.prefetchQuery(
-              ["planets", searchValue, currentPage + 1],
-              () => Planets.getAll({ page: currentPage }),
-              {
-                staleTime: 10000,
-              }
-            )
           }}
         >
           Next
