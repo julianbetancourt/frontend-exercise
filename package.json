@@ -1,6 +1,7 @@
 {
   "name": "frontend-exercise",
   "version": "0.1.0",
+  "homepage": "https://julianbetancourt.github.io/frontend-exercise",
   "private": true,
   "resolutions": {
     "styled-components": "^5"
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +52,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.13",
+    "gh-pages": "^3.2.3",
     "msw": "^0.35.0"
   },
   "msw": {
